@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
 import { spring, hoverLift } from '../lib/motion';
 import { useFlightClock } from '../hooks/useFlightClock';
+import type { DestinationCode } from '../types/booking';
 
 interface TopNavProps {
   visible: boolean;
+  destination?: DestinationCode | null;
 }
 
-export function TopNav({ visible }: TopNavProps) {
-  const flightTime = useFlightClock(visible);
+export function TopNav({ visible, destination = null }: TopNavProps) {
+  const flightTime = useFlightClock(visible, destination);
 
   return (
     <motion.header
@@ -62,7 +64,7 @@ export function TopNav({ visible }: TopNavProps) {
           whileHover={hoverLift}
           transition={{ ...spring, delay: 0.2 }}
         >
-          <p className="luxury-caption">Flight Time</p>
+          <p className="luxury-caption">Time En Route</p>
           <p className="mt-0.5 font-mono text-lg font-semibold tabular-nums tracking-widest text-serenity">
             {flightTime}
           </p>

@@ -16,6 +16,15 @@ export const PRICES_KRW: Record<DestinationCode, number> = {
   CDG: 14_800_000,
 };
 
+/** Planned block time ICN → destination (caps flight clock) */
+export const FLIGHT_DURATION_MS: Record<DestinationCode, number> = {
+  JFK: (14 * 60 + 20) * 60 * 1000,
+  CDG: (12 * 60 + 35) * 60 * 1000,
+};
+
+/** Shown when entering the cabin — already en route */
+export const FLIGHT_CLOCK_START_OFFSET_MS = 45 * 60 * 1000;
+
 export const MILES_DISPLAY = '150,000';
 
 export const FIRST_CLASS_SEATS = ['1A', '2A'] as const;

@@ -103,7 +103,7 @@ export default function App() {
         transition={{ ...spring, duration: 0.7 }}
         style={{ pointerEvents: inCabin ? 'auto' : 'none' }}
       >
-        <TopNav visible={inCabin} />
+        <TopNav visible={inCabin} destination={booking?.destination ?? null} />
 
         <main className="grid flex-1 grid-cols-1 lg:grid-cols-[minmax(340px,400px)_1fr]">
           <VirtualSeatController
