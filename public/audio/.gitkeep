@@ -1,0 +1,2 @@
+# Optional cabin hum loop (MP3). If missing, built-in Web Audio is used.
+#   cabin.mp3
